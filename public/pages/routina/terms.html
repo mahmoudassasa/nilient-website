@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Routina — Terms of Service</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cairo:wght@500;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --primary: #22d3ee;
+      --primary-dark: #0891b2;
+      --accent: #818cf8;
+      --bg: #030712;
+      --surface: rgba(15, 23, 42, 0.95);
+      --text: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --border: rgba(255,255,255,0.12);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: radial-gradient(circle at top left, rgba(34, 211, 238, 0.16), transparent 28%), var(--bg); color: var(--text); min-height: 100vh; }
+    [lang="ar"] { font-family: 'Cairo', 'Inter', sans-serif; }
+
+    .hero { background: linear-gradient(135deg, rgba(34, 211, 238, 0.18), rgba(129, 140, 248, 0.14)); border-bottom: 1px solid var(--border); padding: 72px 24px 52px; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 40px 40px; opacity: 0.25; pointer-events: none; }
+    .logo { width: 72px; height: 72px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; box-shadow: 0 20px 50px rgba(34,211,238,0.25); overflow: hidden; }
+    .logo img { width: 100%; height: 100%; object-fit: cover; }
+    .hero h1 { font-size: clamp(28px, 5vw, 42px); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 12px; }
+    .hero h1 span { color: var(--primary); }
+    .hero p { color: var(--text-secondary); font-size: 15px; max-width: 560px; margin: 0 auto; line-height: 1.7; }
+    .badge { display: inline-block; margin-top: 20px; background: rgba(255,255,255,0.06); border: 1px solid var(--border); border-radius: 999px; padding: 8px 16px; font-size: 12px; color: var(--text-secondary); }
+
+    .container { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+    .section { margin-bottom: 24px; padding: 24px 24px 22px; background: var(--surface); border-radius: 20px; border: 1px solid var(--border); box-shadow: 0 20px 60px rgba(0,0,0,0.22); }
+    .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+    .section-icon { width: 40px; height: 40px; background: rgba(34,211,238,0.12); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .section h2 { font-size: 16px; font-weight: 700; color: var(--text); }
+    .section p { color: var(--text-secondary); font-size: 14.5px; line-height: 1.8; }
+    .section p + p { margin-top: 12px; }
+    .section ul { margin-top: 12px; padding-left: 20px; color: var(--text-secondary); font-size: 14.5px; line-height: 1.8; }
+    .section ul li { margin-bottom: 6px; }
+
+    .contact-box { background: linear-gradient(135deg, rgba(34,211,238,0.16), rgba(129,140,248,0.14)); border: 1px solid rgba(34,211,238,0.25); border-radius: 20px; padding: 28px; text-align: center; margin-top: 36px; }
+    .contact-box h3 { font-size: 18px; margin-bottom: 8px; }
+    .contact-box p { color: var(--text-secondary); font-size: 14px; margin-bottom: 16px; }
+    .contact-box a { display: inline-block; background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; text-decoration: none; padding: 11px 24px; border-radius: 999px; font-size: 14px; font-weight: 700; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .contact-box a:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(34,211,238,0.2); }
+
+    .nav-links { display: flex; justify-content: center; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
+    .nav-links a { display: inline-block; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text-secondary); text-decoration: none; padding: 10px 16px; border-radius: 999px; font-size: 13px; font-weight: 600; transition: border-color 0.2s ease, color 0.2s ease; }
+    .nav-links a:hover { border-color: var(--primary); color: var(--text); }
+    footer { text-align: center; padding: 24px; color: var(--text-secondary); font-size: 13px; }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="logo">
+      <img src="/assets/images/1.jpg" alt="Nilient logo" />
+    </div>
+    <h1>Routina <span>Terms</span> of Service</h1>
+    <p>The rules for using Routina, written in plain language — no dense legal jargon.</p>
+    <div class="badge">Last updated: April 2026</div>
+    <div class="nav-links">
+      <a href="/">Back to Home</a>
+      <a href="/apps/rotina/privacy">View Privacy Policy</a>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">✅</div>
+        <h2>1. Acceptance of Terms</h2>
+      </div>
+      <p>By creating an account or using Routina, you agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree with any part of these terms, please do not use the app.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🙋</div>
+        <h2>2. Eligibility</h2>
+      </div>
+      <p>Routina is not directed at children under the age of 13, and you must be at least 13 years old to create an account. By using Routina, you confirm that you meet this requirement and that the information you provide during registration is accurate.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">📱</div>
+        <h2>3. Use of the App</h2>
+      </div>
+      <p>Routina is a habit-tracking application provided for personal, non-commercial use. You agree not to misuse the app, attempt to reverse-engineer it, interfere with its normal operation, or use it for any unlawful purpose.</p>
+      <p>You are responsible for the habits and data you create within the app, and for keeping your account credentials confidential.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">💳</div>
+        <h2>4. Premium Subscription</h2>
+      </div>
+      <p>Routina offers an optional Premium subscription (monthly or yearly) that removes advertisements. Subscriptions are billed and managed through Google Play Billing.</p>
+      <ul>
+        <li>Subscriptions automatically renew unless cancelled at least 24 hours before the renewal date.</li>
+        <li>You can manage or cancel your subscription anytime through your Google Play account settings.</li>
+        <li>Refunds are handled according to Google Play's refund policy, not directly by Routina.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">✨</div>
+        <h2>5. AI-Generated Content</h2>
+      </div>
+      <p>Routina's Analyze feature uses Google Gemini to generate insights and suggestions based on your habit data. This content is provided for informational and motivational purposes only and should not be treated as professional medical, psychological, or therapeutic advice.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">📦</div>
+        <h2>6. Intellectual Property</h2>
+      </div>
+      <p>The Routina app, including its design, logo, and underlying code, is the property of its developers. You may not copy, modify, distribute, or create derivative works based on the app without prior written permission.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🗑️</div>
+        <h2>7. Account Termination</h2>
+      </div>
+      <p>You may delete your account at any time from within the app or through our web-based deletion request form. We reserve the right to suspend or terminate accounts that violate these Terms or engage in abusive, fraudulent, or unlawful behavior.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">⚠️</div>
+        <h2>8. Disclaimer & Limitation of Liability</h2>
+      </div>
+      <p>Routina is provided "as is" without warranties of any kind, express or implied. We do not guarantee that the app will be uninterrupted, error-free, or that habit tracking will lead to any specific outcome.</p>
+      <p>To the maximum extent permitted by law, Routina and its developers shall not be liable for any indirect, incidental, or consequential damages arising from your use of the app.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🔄</div>
+        <h2>9. Changes to These Terms</h2>
+      </div>
+      <p>We may update these Terms from time to time to reflect changes in the app or applicable law. We will notify you of significant changes through the app or via email. Continued use of Routina after changes constitutes your acceptance of the updated Terms.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">⚖️</div>
+        <h2>10. Governing Law</h2>
+      </div>
+      <p>These Terms are governed by and construed in accordance with applicable local laws, without regard to conflict of law principles. Any disputes arising from these Terms will be resolved through good-faith negotiation in the first instance.</p>
+    </div>
+
+    <div class="contact-box">
+      <h3>Questions About These Terms?</h3>
+      <p>We're happy to clarify anything related to your use of Routina.</p>
+      <a href="mailto:nilient.software.2026@gmail.com">Contact Us</a>
+    </div>
+
+    <div class="nav-links">
+      <a href="/apps/rotina/privacy">← Privacy Policy</a>
+      <a href="/apps/rotina/delete-account">Delete Account</a>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 Routina. Made with <span>♥</span> for better habits.
+  </footer>
+
+</body>
+</html>

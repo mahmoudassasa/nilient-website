@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Routina — Delete Account</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --primary: #2563EB;
+      --primary-dark: #1E40AF;
+      --accent: #FF7D54;
+      --error: #EF4444;
+      --bg: #0F172A;
+      --surface: #1E293B;
+      --text: #F1F5F9;
+      --text-secondary: #CBD5E1;
+      --border: #334155;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 60%);
+      border-bottom: 1px solid var(--border);
+      padding: 64px 24px 48px;
+      text-align: center;
+    }
+    .logo {
+      width: 72px; height: 72px;
+      background: linear-gradient(135deg, var(--error), #B91C1C);
+      border-radius: 20px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+      overflow: hidden;
+    }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(28px, 5vw, 42px);
+      margin-bottom: 12px;
+    }
+    .hero h1 span { color: var(--error); }
+    .hero p { color: var(--text-secondary); font-size: 15px; max-width: 480px; margin: 0 auto; }
+    .badge {
+      display: inline-block;
+      margin-top: 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-size: 12px;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .warning-box {
+      background: rgba(239,68,68,0.1);
+      border-left: 4px solid var(--error);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 32px;
+    }
+
+    .section {
+      margin-bottom: 24px;
+      padding: 24px;
+      background: var(--surface);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .section-icon {
+      width: 40px; height: 40px;
+      background: rgba(239,68,68,0.15);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+    .section h2 { font-size: 18px; font-weight: 600; }
+
+    .section p, .section li {
+      color: var(--text-secondary);
+      font-size: 14.5px;
+      line-height: 1.7;
+    }
+
+    .step-list {
+      list-style: none;
+      margin-top: 12px;
+    }
+    .step-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .step-list li:last-child { border-bottom: none; }
+    .step-number {
+      width: 28px; height: 28px;
+      background: rgba(239,68,68,0.2);
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--error);
+    }
+
+    .delete-form {
+      background: rgba(239,68,68,0.05);
+      border: 1px solid rgba(239,68,68,0.3);
+      border-radius: 16px;
+      padding: 24px;
+      margin-top: 16px;
+    }
+    .delete-form input, .delete-form select {
+      width: 100%;
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--text);
+      font-size: 14px;
+    }
+    .delete-form input:focus {
+      outline: none;
+      border-color: var(--error);
+    }
+    .btn-delete {
+      width: 100%;
+      background: var(--error);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-delete:hover { background: #B91C1C; }
+
+    .contact-box {
+      background: linear-gradient(135deg, rgba(239,68,68,0.12), rgba(185,28,28,0.06));
+      border: 1px solid rgba(239,68,68,0.25);
+      border-radius: 16px;
+      padding: 28px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .contact-box a {
+      display: inline-block;
+      background: var(--error);
+      color: white;
+      text-decoration: none;
+      padding: 10px 24px;
+      border-radius: 999px;
+    }
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      display: inline-block;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 13.5px;
+      font-weight: 500;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .nav-links a:hover {
+      border-color: var(--primary);
+      color: var(--text);
+    }
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+    footer span { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="logo">
+    <img src="/assets/images/1.jpg" width="72" height="72" style="border-radius:20px; object-fit:cover;" alt="Routina">
+  </div>
+  <h1>Delete <span>Account</span></h1>
+  <p>Permanently remove your account and all associated data</p>
+  <div class="badge">⚠️ This action cannot be undone</div>
+</div>
+
+<div class="container">
+
+  <div class="warning-box">
+    <p><strong>⚠️ Important:</strong> Deleting your account is permanent. All your habits, progress data, and premium status will be erased and cannot be recovered.</p>
+  </div>
+
+  <!-- OPTION 1: From App -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">📱</div>
+      <h2>Option 1: Delete from within the App</h2>
+    </div>
+    <ul class="step-list">
+      <li><span class="step-number">1</span> Open Routina app → Settings</li>
+      <li><span class="step-number">2</span> Tap <strong style="color:#EF4444;">Delete Account</strong></li>
+      <li><span class="step-number">3</span> Enter your email & password (or confirm with Google)</li>
+      <li><span class="step-number">4</span> Confirm deletion</li>
+    </ul>
+  </div>
+
+  <!-- OPTION 2: From Web with Email Verification -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">🌐</div>
+      <h2>Option 2: Delete from Web</h2>
+    </div>
+    <p>Fill out the form below to request account deletion. We'll send a confirmation link to your email before deleting.</p>
+    
+    <div class="delete-form">
+      <input type="email" id="deleteEmail" placeholder="Your account email address" />
+      <select id="deleteReason">
+        <option value="no longer needed">I no longer need the account</option>
+        <option value="privacy concerns">Privacy concerns</option>
+        <option value="too many emails">Too many emails</option>
+        <option value="switching to other app">Switching to another app</option>
+        <option value="other">Other reason</option>
+      </select>
+      <button class="btn-delete" onclick="requestDeletion()">Request Account Deletion</button>
+    </div>
+  </div>
+
+  <!-- What gets deleted -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">🗑️</div>
+      <h2>What Gets Deleted</h2>
+    </div>
+    <ul class="step-list">
+      <li><span class="step-number">✓</span> Your account credentials (email, password, Google Sign-In)</li>
+      <li><span class="step-number">✓</span> All habits and tracking data</li>
+      <li><span class="step-number">✓</span> Premium subscription status</li>
+      <li><span class="step-number">✓</span> Profile information and photos</li>
+      <li><span class="step-number">✓</span> AI analysis history</li>
+    </ul>
+  </div>
+
+  <div class="contact-box">
+    <h3>Need Help?</h3>
+    <p>If you're having trouble deleting your account, contact our support team.</p>
+    <a href="mailto:nilient.software.2026@gmail.com?subject=Delete Account Request&body=Please delete my Routina account. My email is: ">Contact Support</a>
+  </div>
+
+  <div class="nav-links">
+    <a href="/apps/rotina/privacy">← Privacy Policy</a>
+    <a href="/apps/rotina/terms">Terms of Service</a>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Routina. Made with <span>♥</span> for better habits.
+</footer>
+
+<script>
+function requestDeletion() {
+  const email = document.getElementById('deleteEmail').value;
+  const reason = document.getElementById('deleteReason').value;
+  
+  if (!email || !email.includes('@')) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+  
+  const subject = `Delete Account Request: ${email}`;
+  const body = `I would like to permanently delete my Routina account.\n\nAccount email: ${email}\nReason: ${reason}\n\nPlease confirm deletion.`;
+  
+  window.location.href = `mailto:nilient.software.2026@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+</script>
+</body>
+</html>
