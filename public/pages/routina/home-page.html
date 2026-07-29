@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- كود التحقق من Google Search Console -->
+  <meta name="google-site-verification" content="9uVr1-9YiBsrfoe8Cc1_XH-VEVSqggRW7yJ-tn2jxBE" />
+
+  <title>Routina App — Habit Tracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --primary: #2563EB; --primary-dark: #1E40AF; --accent: #FF7D54;
+      --bg: #0F172A; --surface: #1E293B; --surface2: #334155;
+      --text: #F1F5F9; --text-secondary: #CBD5E1; --border: #334155;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+    .hero {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 60%);
+      border-bottom: 1px solid var(--border);
+      padding: 64px 24px 48px; text-align: center; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%);
+      top: -100px; left: 50%; transform: translateX(-50%); pointer-events: none;
+    }
+    .logo { width: 72px; height: 72px; border-radius: 20px; margin: 0 auto 20px; box-shadow: 0 8px 32px rgba(37,99,235,0.35); }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 5vw, 42px); font-weight: 400; letter-spacing: -0.5px; margin-bottom: 12px; }
+    .hero h1 span { color: var(--primary); }
+    .hero p { color: var(--text-secondary); font-size: 15.5px; max-width: 520px; margin: 0 auto; line-height: 1.7; }
+    .badge { display: inline-block; margin-top: 20px; background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 6px 16px; font-size: 12px; color: var(--text-secondary); }
+    .hero-links { display: flex; justify-content: center; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+    .hero-links a { display: inline-block; text-decoration: none; padding: 10px 22px; border-radius: 999px; font-size: 13.5px; font-weight: 500; transition: background 0.2s, border-color 0.2s; }
+    .hero-links a.primary-link { background: var(--primary); color: white; }
+    .hero-links a.primary-link:hover { background: var(--primary-dark); }
+    .hero-links a.secondary-link { background: var(--surface); border: 1px solid var(--border); color: var(--text-secondary); }
+    .hero-links a.secondary-link:hover { border-color: var(--primary); color: var(--text); }
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    .section { margin-bottom: 28px; padding: 28px; background: var(--surface); border-radius: 16px; border: 1px solid var(--border); }
+    .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+    .section-icon { width: 40px; height: 40px; background: rgba(37,99,235,0.15); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .section h2 { font-size: 16px; font-weight: 600; color: var(--text); }
+    .section p { color: var(--text-secondary); font-size: 14.5px; line-height: 1.75; }
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 8px; }
+    .feature { background: var(--surface2); border-radius: 12px; padding: 16px; font-size: 13.5px; color: var(--text-secondary); }
+    .feature strong { display: block; color: var(--text); font-size: 14px; margin-bottom: 4px; }
+    .contact-box { background: linear-gradient(135deg, rgba(37,99,235,0.15), rgba(30,64,175,0.1)); border: 1px solid rgba(37,99,235,0.3); border-radius: 16px; padding: 28px; text-align: center; margin-top: 32px; }
+    .contact-box h3 { font-size: 18px; margin-bottom: 8px; }
+    .contact-box p { color: var(--text-secondary); font-size: 14px; margin-bottom: 16px; }
+    .contact-box a { display: inline-block; background: var(--primary); color: white; text-decoration: none; padding: 10px 24px; border-radius: 999px; font-size: 14px; font-weight: 500; }
+    .nav-links { display: flex; justify-content: center; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+    .nav-links a { display: inline-block; background: var(--surface); border: 1px solid var(--border); color: var(--text-secondary); text-decoration: none; padding: 10px 20px; border-radius: 999px; font-size: 13.5px; font-weight: 500; }
+    .nav-links a:hover { border-color: var(--primary); color: var(--text); }
+    footer { text-align: center; padding: 32px 24px; border-top: 1px solid var(--border); color: var(--text-secondary); font-size: 13px; }
+    footer span { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="logo">
+      <img src="routina_icon_final.png" width="72" height="72" style="border-radius: 20px;" alt="Routina App logo">
+    </div>
+    <h1>Routina <span>App</span></h1>
+    <p>Routina App is a habit tracking application that helps you build and maintain daily routines. Track your habits, monitor your progress with detailed streaks, and get AI-powered insights to stay consistent — all in one simple, focused app.</p>
+    <div class="badge">Available on Google Play</div>
+    <div class="hero-links">
+      <a href="privacy-policy.html" class="primary-link">Privacy Policy</a>
+      <a href="https://idyllic-frangollo-bcbcc8.netlify.app/" class="secondary-link">Terms of Service</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🎯</div>
+        <h2>What Routina App Does</h2>
+      </div>
+      <p>Routina App lets you create daily, weekly, or custom habits and track your consistency over time. Every completed habit builds your streak, and our AI analytics feature (powered by Google Gemini) reviews your patterns to give you personalized suggestions for staying on track.</p>
+      <div class="features">
+        <div class="feature"><strong>Habit Tracking</strong>Create and log daily habits with custom frequency and reminders.</div>
+        <div class="feature"><strong>Streaks &amp; Progress</strong>Visualize your consistency with streak counters and completion rates.</div>
+        <div class="feature"><strong>AI Insights</strong>Get personalized analysis of your habit patterns and suggestions.</div>
+        <div class="feature"><strong>Arabic &amp; English</strong>Full bilingual support with right-to-left layout for Arabic.</div>
+      </div>
+    </div>
+
+    <div class="contact-box">
+      <h3>Questions or Support?</h3>
+      <p>We're happy to help with any questions about Routina App.</p>
+      <a href="mailto:support@nilient.com">Contact Us</a>
+    </div>
+
+    <div class="nav-links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="https://idyllic-frangollo-bcbcc8.netlify.app/">Terms of Service</a>
+      <a href="https://inquisitive-klepon-3b1a8d.netlify.app/">Delete Account</a>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 Routina App by Nilient Software Solutions. Made with <span>♥</span> for better habits.
+  </footer>
+
+</body>
+</html>
