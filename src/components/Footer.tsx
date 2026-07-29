@@ -111,12 +111,12 @@ export default function Footer() {
             </h4>
             <ul className="flex flex-col gap-3">
               <li>
-                <a href="/pages/privacy.html" className="text-slate-400 hover:text-teal-400 text-sm transition-colors duration-200">
+                <a href="/pages/routina/privacy-policy.html" className="text-slate-400 hover:text-teal-400 text-sm transition-colors duration-200">
                   {footer.privacy}
                 </a>
               </li>
               <li>
-                <a href="/pages/terms.html" className="text-slate-400 hover:text-teal-400 text-sm transition-colors duration-200">
+                <a href="/pages/routina/terms.html" className="text-slate-400 hover:text-teal-400 text-sm transition-colors duration-200">
                   {footer.terms}
                 </a>
               </li>
@@ -128,12 +128,8 @@ export default function Footer() {
         <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8" />
 
         {/* Bottom bar */}
-        <div className="reveal flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="reveal flex items-center justify-center sm:justify-start">
           <p className="text-slate-500 text-xs">{footer.copyright}</p>
-          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#12192e] border border-white/5">
-            <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
-            <span className="text-slate-400 text-xs font-medium">All systems operational</span>
-          </div>
         </div>
       </div>
     </footer>
